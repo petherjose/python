@@ -8,10 +8,12 @@ def rename_files():
     absolute_path = saved_path + r"/prank/"
     print(absolute_path)
     os.chdir(absolute_path)
-
         
     for file_name in file_list:
-        print(file_name)
-        os.rename(file_name, file_name.translate(None, "0123456789"))
+        newName = file_name.translate(None, "0123456789")
+        os.rename(file_name, newName)
+        print("Old name: " + file_name)
+        print("New name: " + newName)
+
 
 rename_files()
